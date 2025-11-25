@@ -1,0 +1,114 @@
+:root {
+    --bg-1: #fffaf8;
+    /* warm cream */
+    --bg-2: #f0fbff;
+    /* pale aqua */
+    --primary: #a3d8ff;
+    /* pastel sky blue */
+    --primary-600: #82c7ff;
+    /* slightly deeper */
+    --accent: #ffd7a6;
+    /* pastel peach */
+    --muted: #7a8790;
+    --card-bg: #ffffff;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans Thai', 'Segoe UI', Roboto, Arial, sans-serif;
+    background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1100px
+}
+
+header {
+    background: linear-gradient(90deg, rgba(163, 216, 255, 0.12), rgba(255, 215, 166, 0.06));
+    border-radius: 0 0 14px 14px;
+    padding: 1.5rem 1rem;
+}
+
+header h3 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.2px
+}
+
+header p {
+    margin: 0.25rem 0;
+    color: var(--muted)
+}
+
+h4.text-primary {
+    color: var(--accent);
+    font-weight: 700
+}
+
+.card {
+    border: 0;
+    border-radius: var(--radius);
+    background: var(--card-bg);
+    box-shadow: 0 10px 30px rgba(13, 27, 62, 0.04)
+}
+
+.card-body {
+    padding: 1.25rem
+}
+
+.week-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #08324a;
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary-600);
+    border-color: var(--primary-600)
+}
+
+footer {
+    color: var(--muted);
+    font-size: 0.95rem;
+    padding: 2rem 0
+}
+
+
+/* Responsive tweaks */
+
+@media (max-width:767px) {
+    header {
+        padding: 1rem
+    }
+    .container {
+        padding: 0 1rem
+    }
+}
+
+
+/* Accessibility focus states */
+
+a:focus,
+button:focus {
+    outline: 3px solid rgba(163, 216, 255, 0.35);
+    outline-offset: 2px
+}
