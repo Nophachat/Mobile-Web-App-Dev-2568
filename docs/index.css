@@ -3,9 +3,9 @@
     /* warm cream */
     --bg-2: #f0fbff;
     /* pale aqua */
-    --primary: #a3d8ff;
+    --primary: #a3ffc5;
     /* pastel sky blue */
-    --primary-600: #82c7ff;
+    --primary-600: #bcff82;
     /* slightly deeper */
     --accent: #ffd7a6;
     /* pastel peach */
@@ -24,8 +24,7 @@ body {
 }
 
 body {
-    margin: 0;
-    font-family: 'Noto Sans Thai', 'Segoe UI', Roboto, Arial, sans-serif;
+    flex-direction: 'Noto Sans Thai', 'Segoe UI', Roboto, Arial, sans-serif;
     background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
     color: #111827;
     -webkit-font-smoothing: antialiased;

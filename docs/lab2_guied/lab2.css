@@ -1,0 +1,191 @@
+/* โลโก้ดอกไม้แบบเคลื่อนไหว */
+
+.logo {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 10px auto;
+    position: relative;
+    display: block;
+    animation: spin 3s linear infinite;
+}
+
+.petal {
+    position: absolute;
+    width: 40px;
+    height: 70px;
+    background: radial-gradient(circle at 60% 30%, #fff7b2 60%, #f7b2e6 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.85;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.petal1 {
+    transform: rotate(0deg) translateY(-30px);
+}
+
+.petal2 {
+    transform: rotate(72deg) translateY(-30px);
+}
+
+.petal3 {
+    transform: rotate(144deg) translateY(-30px);
+}
+
+.petal4 {
+    transform: rotate(216deg) translateY(-30px);
+}
+
+.petal5 {
+    transform: rotate(288deg) translateY(-30px);
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 38px;
+    height: 38px;
+    background: radial-gradient(circle at 30% 30%, #ffe066 70%, #f7b731 100%);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 2px solid #fff7b2;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #148131;
+    color: #222;
+}
+
+header {
+    background: #439122;
+    color: #52e689;
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    margin: 20px;
+    font-size: 30px;
+}
+
+header p {
+    margin: 20px;
+    font-size: 20px;
+}
+
+main {
+    max-width: 900px;
+    margin: 2px auto;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 คอลัมน์ */
+    gap: 10px;
+    /* ระยะห่างระหว่างรูป */
+    justify-items: center;
+    /* จัดรูปให้อยู่ตรงกลางแต่ละช่อง */
+    background-color: #e0e6e3;
+    border-radius: 12px;
+}
+
+.place {
+    border-radius: 12px;
+    box-shadow: 2px 12px rgba(0, 0, 0, 0.07);
+    margin-bottom: 5px;
+    padding: 5px;
+    transition: box-shadow 0.2s;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.place:hover {
+    box-shadow: 4px 24px rgba(106, 156, 84, 0.15);
+}
+
+.place h2 {
+    color: #6a9c54;
+    margin-top: 0;
+}
+
+.place p {
+    margin-bottom: 1rem;
+}
+
+.images {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.images img {
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e0e6e3;
+    background: #eee;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #e0e6e3;
+    color: #6a9c54;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px auto;
+    background: radial-gradient(circle at 30% 30%, #52e689 60%, #439122 100%);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    animation: spin 2s linear infinite;
+    display: block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        padding: 0 0.5rem;
+    }
+    .images img {
+        width: 100%;
+        max-width: 320px;
+        height: 140px;
+        grid-template-columns: auto;
+    }
+    .place {
+        padding: 1rem;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
