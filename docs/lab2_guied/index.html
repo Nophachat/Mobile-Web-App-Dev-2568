@@ -9,17 +9,64 @@
 </head>
 
 <body>
+
     <header>
-        <div class="logo">
-            <div class="petal petal1"></div>
-            <div class="petal petal2"></div>
-            <div class="petal petal3"></div>
-            <div class="petal petal4"></div>
-            <div class="petal petal5"></div>
-            <div class="center"></div>
-        </div>
+        <canvas id="logo" width="120" height="120"></canvas>
         <h1>KKU Campus Guide</h1>
         <p>รหัสนักศึกษา: 663380601-7 | ชื่อ-สกุล: นายนพชาติ น้อยนารถ</p>
+        <section class="place-form">
+            <h2>แนะนำสถานที่ใหม่</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Access Key ของคุณ -->
+                <input type="hidden" name="access_key" value="cc481178-6b46-415a-b4fa-abebb9eabb6f">
+
+                <!-- ชื่อสถานที่ -->
+                <label for="name">ชื่อสถานที่:</label>
+                <input type="text" id="name" name="name" placeholder="เช่น อุทยานใหม่" required>
+                <!-- รายละเอียด -->
+                <label for="description">รายละเอียด:</label>
+                <textarea id="description" name="description" rows="5" placeholder="บรรยายสถานที่..." required></textarea>
+
+                <!-- URL ของภาพ -->
+                <label for="image">ลิ้งภาพ (URL):</label>
+                <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" required>
+
+                <button type="submit">ส่งข้อมูล</button>
+            </form>
+        </section>
+
+    </header>
+
+    <script>
+        const c = document.getElementById("logo");
+        const ctx = c.getContext("2d");
+        let r = 0;
+
+        function draw() {
+            ctx.clearRect(0, 0, 120, 120);
+
+            ctx.save();
+            ctx.translate(60, 60);
+            ctx.rotate(r);
+
+            // วงกลม
+            ctx.beginPath();
+            ctx.arc(0, 0, 40, 0, Math.PI * 2);
+            ctx.fillStyle = "#f7b731";
+            ctx.fill();
+
+            // ข้อความ KKU
+            ctx.fillStyle = "#2d2d2d";
+            ctx.font = "bold 22px sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText("KKU", 0, 7);
+
+            ctx.restore();
+            r += 0.02;
+            requestAnimationFrame(draw);
+        }
+        draw();
+    </script>
     </header>
     <main>
         <section class="place">
